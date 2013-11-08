@@ -27,6 +27,12 @@ var testResults;
 
   <<< test/types.js
 
+  ## NOTE
+
+  This is currently a work in progress, being developed to support the
+  [WebRTC Spec Parity Tests](https://github.com/rtc-io/spec-parity) in
+  [rtc.io](https://rtc.io).
+
 **/
 
 module.exports = function(tape) {
