@@ -14,9 +14,7 @@ could) that humans can enjoy.
 
 [![NPM](https://nodei.co/npm/boombox.png)](https://nodei.co/npm/boombox/)
 
-
-[![browser support](https://ci.testling.com/DamonOehlman/boombox.png)](https://ci.testling.com/DamonOehlman/boombox)
-
+[![Build Status](https://travis-ci.org/DamonOehlman/boombox.png?branch=master)](https://travis-ci.org/DamonOehlman/boombox)
 
 ## Example Usage
 
