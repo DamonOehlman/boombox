@@ -2,7 +2,7 @@
 /* global window, document: false */
 'use strict';
 
-var append = require('dd/append');
+var append = require('fdom/append');
 var crel = require('crel');
 var testResults;
 
@@ -18,6 +18,7 @@ module.exports = function(tape) {
   return function(name, fn) {
     // initialise tape
     var test = tape(name, fn);
+    var item = append.to(testResults, crel('li', name));
 
     test.on('plan', function(count) {
       console.log('plan: ', arguments);
