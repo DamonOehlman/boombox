@@ -1,0 +1,30 @@
+{
+  "name": "boombox",
+  "version": "0.0.0",
+  "description": "Insert your tape to play your test suites with fancy output",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/boombox.git"
+  },
+  "keywords": [
+    "tape",
+    "testing",
+    "browser"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/boombox/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/boombox",
+  "devDependencies": {
+    "tape": "~2.1.0"
+  },
+  "dependencies": {
+    "crel": "~1.1.0"
+  }
+}
