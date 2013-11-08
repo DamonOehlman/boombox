@@ -27,6 +27,13 @@ var testResults;
 
   <<< test/types.js
 
+  You can then run your tests with
+  [beefy](https://github.com/chrisdickinson/beefy):
+
+  ```
+  beefy test/types.js
+  ```
+
   ## NOTE
 
   This is currently a work in progress, being developed to support the
