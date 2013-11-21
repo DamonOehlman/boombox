@@ -3,6 +3,7 @@
 'use strict';
 
 var append = require('fdom/append');
+var tweak = require('fdom/classtweak');
 var crel = require('crel');
 var testResults;
 
@@ -42,7 +43,7 @@ var testResults;
 
 **/
 
-module.exports = function(tape) {
+var boombox = module.exports = function(tape) {
   // if we are not running in a browser, just return tape
   if (typeof window == 'undefined') {
     return tape;
@@ -55,17 +56,22 @@ module.exports = function(tape) {
     // initialise tape
     var test = tape(name, fn);
     var item = append.to(testResults, crel('li', name));
+    var expected = 0;
+    var passed = 0;
 
     test.on('plan', function(count) {
-      console.log('plan: ', arguments);
+      tweak('+active', item);
+      expected = count;
     });
 
     test.on('prerun', function() {
       console.log('prerun: ', arguments);
     });
 
-    test.on('result', function() {
-      console.log('result: ', arguments);
+    test.on('result', function(result) {
+      if (result.ok) {
+        passed += 1;
+      }
     });
 
     test.on('run', function() {
@@ -73,11 +79,24 @@ module.exports = function(tape) {
     });
 
     test.on('end', function() {
-      console.log('end: ', arguments);
+      tweak('-active', item);
+      tweak(passed === expected ? '+pass' : '+fail', item);
     });
 
     return test;
   };
+};
+
+boombox.section = function(title) {
+  if (typeof window == 'undefined') {
+    return;
+  }
+
+  // get or create our test container
+  testResults = testResults || createResultsContainer();
+
+  // create a heading section
+  append.to(testResults, crel('li', { class: 'section' }, crel('h2', title)));
 };
 
 function createResultsContainer() {
