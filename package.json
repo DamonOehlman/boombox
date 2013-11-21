@@ -1,6 +1,6 @@
 {
   "name": "boombox",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Insert your tape to play your test suites with fancy output",
   "main": "index.js",
   "scripts": {
